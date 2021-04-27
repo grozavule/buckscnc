@@ -6,17 +6,23 @@
 @section('hero-content')
     <div class="home-hero-logo text-center">
         <picture>
-            <source media="(max-width:800px)" srcset="{{ asset('assets/images/bucks-cnc-fc-logo-175w.png') }}">
+            <source media="(max-width:1000px)" srcset="{{ asset('assets/images/bucks-cnc-fc-logo-175w.png') }}">
             <img src="{{ asset('assets/images/bucks-cnc-fc-logo.png') }}" alt="Buck's CNC Machining Logo" />
         </picture>
     </div>
-    <div class="home-hero-cta">
+    <div class="hero-cta home-hero-cta">
         <div class="cta-wrapper">
-            <h1 class="hero-main-line">EXPAND</h1>
-            <h4 class="hero-secondary-line">YOUR PRODUCTION CAPABILITIES</h4>
+            <h1 class="hero-main-line">
+                <span>E</span><span>X</span><span>P</span><span>A</span><span>N</span><span>D</span>
+            </h1>
+            <h4 class="hero-secondary-line">
+                <span>YOUR</span>&nbsp;
+                <span>PRODUCTION</span>&nbsp;
+                <span>CAPABILITIES</span>
+            </h4>
             <p>Do you need parts machined to tighter tolerances but don’t have room in the budget for state-of-the-art CNC equipment?</p>
             <p>Are you engineering a new part and need a working prototype before taking it into production?</p>
-            <p class="text-center"><a href="{{ route('request-quote') }}" class="button color-secondary">REQUEST A QUOTE</a></p>
+            <p class="text-center"><a href="{{ route('quote.index') }}" class="button color-secondary">REQUEST A QUOTE</a></p>
         </div>
     </div>
 @endsection
