@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Events\QuoteRequested;
+use \ZipArchive;
 
 class QuoteRequestController extends Controller
 {
@@ -18,6 +19,7 @@ class QuoteRequestController extends Controller
 
     public function store(Request $request)
     {
+        //validate form input
         $validInput = Validator::make($request->all(), [
             'first_name' => ['required', 'string', 'max:35'],
             'last_name' => ['required', 'string', 'max:50'],
@@ -35,6 +37,7 @@ class QuoteRequestController extends Controller
             return Response::json($validInput->errors(), 400);
         }
 
+        //save the quote to the database
         $quote = new Quote;
         $quote->first_name = $request->input('first_name');
         $quote->last_name = $request->input('last_name');
@@ -46,23 +49,48 @@ class QuoteRequestController extends Controller
         $quote->company_name = $request->input('company_name');
         $quote->save();
 
-        $counter = 0;
+        $files = [];
+        $companyName = str_replace(' ', '_', $quote->company_name);
         foreach ($request->file('files') as $file) {
             $path = $file->storeAs(
-                'quote-requests/' . str_replace(' ', '_', $quote->company_name) . '/' . $quote->id,
+                'quote-requests/' . $companyName . '/' . $quote->id,
                 $file->getClientOriginalName()
             );
+            $files[] = ['path' => storage_path('app/' . $path), 'fileName' => $file->getClientOriginalName()];
             $quote->files()->create([
                 'quote_id' => $quote->id,
                 'file_uri' => $path
             ]);
-            $counter++;
         }
-        if($counter === 0)
+
+        if(count($files) <= 0)
         {
             return Response::json(['files' => 'No files were received. Please try again'], 400);
         }
 
+        //dd($files);
+
+        $zip = new ZipArchive;
+        //dd(storage_path('app/public/' . $companyName . '/' . $quote->id));
+        Storage::makeDirectory(storage_path('app/public/'. $companyName . '/' . $quote->id));
+        $isOpen = $zip->open(storage_path('app/public/' . $companyName . '/' . $quote->id . '/' . now() . '.zip'), ZipArchive::CREATE | ZipArchive::CHECKCONS | ZipArchive::OVERWRITE);
+        if($isOpen === true)
+        {
+            foreach ($files as $file) {
+                if(!file_exists($file['path']))
+                {
+                    dd("Does not exist: " . $file['path']);
+                } else {
+                    $isAdded = $zip->addFile($file['path'], $file['fileName']);
+                    if (!$isAdded) {
+                        dd("Not Added: " . $file['fileName']);
+                    }
+                }
+            }
+            $zip->close();
+        } else {
+            dd(storage_path('public/' . $companyName . '/' . $quote->id . '/' . now() . '.zip was not created'));
+        }
         QuoteRequested::dispatch($quote);
 
         return Response::json(['success' => 'Thank you. Your request has been received.'], 200);
