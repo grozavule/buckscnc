@@ -29,3 +29,7 @@ Route::get('/request-quote', [QuoteRequestController::class, 'index'])->name('qu
 Route::post('/request-quote', [QuoteRequestController::class, 'store'])->name('quote.store');
 
 Route::post('/send-message', [EmailController::class, 'send'])->name('email.send');
+
+Route::middleware('auth')->group(function(){
+    Route::get('/request/download', [QuoteRequestController::class, 'download'])->name('quote.download');
+});

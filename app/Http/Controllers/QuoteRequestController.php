@@ -17,6 +17,11 @@ class QuoteRequestController extends Controller
         return view('quote.index', ['pageIdentifier' => 'quote']);
     }
 
+    public function download(Request $request)
+    {
+        return 'Download files here';
+    }
+
     public function store(Request $request)
     {
         //validate form input
@@ -47,7 +52,7 @@ class QuoteRequestController extends Controller
         $quote->material = $request->input('material');
         $quote->due_date = $request->input('due_date');
         $quote->company_name = $request->input('company_name');
-        $quote->save();
+        //$quote->save();
 
         $files = [];
         $companyName = str_replace(' ', '_', $quote->company_name);
@@ -57,10 +62,6 @@ class QuoteRequestController extends Controller
                 $file->getClientOriginalName()
             );
             $files[] = ['path' => storage_path('app/' . $path), 'fileName' => $file->getClientOriginalName()];
-            $quote->files()->create([
-                'quote_id' => $quote->id,
-                'file_uri' => $path
-            ]);
         }
 
         if(count($files) <= 0)
@@ -68,28 +69,28 @@ class QuoteRequestController extends Controller
             return Response::json(['files' => 'No files were received. Please try again'], 400);
         }
 
-        //dd($files);
-
         $zip = new ZipArchive;
         $path = storage_path('app/public/' . $companyName . '/' . $quote->id);
+        $zipFile = $path . '/' . now()->getTimestamp() . '.zip';
         Storage::makeDirectory('public/'. $companyName . '/' . $quote->id);
-        $isOpen = $zip->open($path . '/' . now()->getTimestamp() . '.zip', ZipArchive::CHECKCONS | ZipArchive::CREATE);
+        $isOpen = $zip->open($zipFile, ZipArchive::CHECKCONS | ZipArchive::CREATE);
         if($isOpen === true)
         {
+            $quote->zip_uri = $zipFile;
+            $quote->save();
+
             foreach ($files as $file) {
-                if(!file_exists($file['path']))
-                {
-                    dd("Does not exist: " . $file['path']);
-                } else {
+                if (file_exists($file['path'])) {
                     $isAdded = $zip->addFile($file['path'], $file['fileName']);
-                    if (!$isAdded) {
-                        dd("Not Added: " . $file['fileName']);
-                    }
+                    $quote->files()->create([
+                        'quote_id' => $quote->id,
+                        'file_uri' => $file['path']
+                    ]);
                 }
             }
             $zip->close();
         } else {
-            dd($path . '/' . now()->getTimestamp() . '.zip was not created');
+            Response::json(['danger' => 'A problem occurred while processing your files. Please try again.'], 400);
         }
         QuoteRequested::dispatch($quote);
 
