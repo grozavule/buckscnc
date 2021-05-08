@@ -5,13 +5,22 @@ function clearForm() {
 
     errorElement.classList.add('hidden');
     Array.prototype.forEach.call(fields, function (field) {
-        field.classList.remove('is-invalid');
+        //field.classList.remove('is-invalid');
+        field.className = 'form-control';
     });
     Array.prototype.forEach.call(containers, function (container) {
         let feedback = container.querySelector('.invalid-feedback');
         feedback.style.visibility = 'hidden';
         feedback.innerHTML = '';
     });
+}
+
+function displayMainError(message)
+{
+    let alert = document.querySelector('.form-alert');
+    alert.className = 'alert alert-danger form-alert';
+    alert.innerHTML = message;
+    scrollToFormTop();
 }
 
 function displayError(element, message) {
@@ -21,8 +30,10 @@ function displayError(element, message) {
     let input = parent.querySelector('input');
     let feedback = parent.querySelector('.invalid-feedback');
 
-    alert.classList.remove('hidden');
-    input.classList.add('is-invalid');
+    //alert.classList.remove('hidden');
+    //input.classList.add('is-invalid');
+    alert.className = 'alert alert-danger form-alert';
+    input.className = 'form-control is-invalid';
     feedback.style.visibility = 'visible';
     feedback.style.display = 'inline-block';
     feedback.innerHTML = message;
@@ -30,7 +41,8 @@ function displayError(element, message) {
 
 function displaySuccess(message) {
     let formSuccess = document.querySelector('.form-alert');
-    formSuccess.classList.remove('alert-danger').add('alert-success');
+    //formSuccess.classList.remove('alert-danger').add('alert-success');
+    formSuccess.className = 'alert alert-success form-alert';
     formSuccess.innerHTML = message;
 }
 
@@ -46,6 +58,7 @@ function showFiles(files)
 form = document.querySelector('#request');
 var input = form.querySelector('input[type="file"]');
 var label = form.querySelector('label[for="file"]');
+var droppedFiles = false;
 
 input.style.background = '#cc0000';
 input.addEventListener('change', function (e) {
@@ -59,32 +72,36 @@ form.addEventListener('submit', function (e) {
     var ajax = new XMLHttpRequest();
     var data = new FormData(this);
 
-    console.log(droppedFiles);
+    if (droppedFiles)
+    {
+        Array.prototype.forEach.call(droppedFiles, function (file) {
+            console.log(file);
+            data.append(input.getAttribute('name'), file);
+        });
 
-    Array.prototype.forEach.call(droppedFiles, function (file) {
-        console.log(file);
-        data.append(input.getAttribute('name'), file);
-    });
+        ajax.open(this.getAttribute('method'), this.getAttribute('action'), true);
 
-    ajax.open(this.getAttribute('method'), this.getAttribute('action'), true);
-
-    ajax.onload = function () {
-        if (ajax.status >= 200 && ajax.status < 400) {
-            var data = JSON.parse(ajax.responseText);
-            scrollToFormTop();
-            displaySuccess(data.success);
-        } else {
-            scrollToFormTop();
-            let errors = JSON.parse(ajax.responseText);
-            for (let key in errors) {
-                displayError(key, errors[key]);
+        ajax.onload = function () {
+            if (ajax.status >= 200 && ajax.status < 400) {
+                var data = JSON.parse(ajax.responseText);
+                scrollToFormTop();
+                displaySuccess(data.success);
+            } else {
+                scrollToFormTop();
+                displayMainError('Oops! There were issues found with your information. Please see the specific messages below.')
+                let errors = JSON.parse(ajax.responseText);
+                for (let key in errors) {
+                    displayError(key, errors[key]);
+                }
             }
-        }
-    };
+        };
 
-    ajax.onerror = function () {
-        alert('Error. Please, try again!');
-    };
+        ajax.onerror = function () {
+            alert('Error. Please, try again!');
+        };
 
-    ajax.send(data);
+        ajax.send(data);
+    } else {
+        displayMainError('No files were selected');
+    }
 });

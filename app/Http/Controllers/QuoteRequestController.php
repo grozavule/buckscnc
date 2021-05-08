@@ -71,9 +71,9 @@ class QuoteRequestController extends Controller
         //dd($files);
 
         $zip = new ZipArchive;
-        //dd(storage_path('app/public/' . $companyName . '/' . $quote->id));
-        Storage::makeDirectory(storage_path('app/public/'. $companyName . '/' . $quote->id));
-        $isOpen = $zip->open(storage_path('app/public/' . $companyName . '/' . $quote->id . '/' . now() . '.zip'), ZipArchive::CREATE | ZipArchive::CHECKCONS | ZipArchive::OVERWRITE);
+        $path = storage_path('app/public/' . $companyName . '/' . $quote->id);
+        Storage::makeDirectory('public/'. $companyName . '/' . $quote->id);
+        $isOpen = $zip->open($path . '/' . now()->getTimestamp() . '.zip', ZipArchive::CHECKCONS | ZipArchive::CREATE);
         if($isOpen === true)
         {
             foreach ($files as $file) {
@@ -89,7 +89,7 @@ class QuoteRequestController extends Controller
             }
             $zip->close();
         } else {
-            dd(storage_path('public/' . $companyName . '/' . $quote->id . '/' . now() . '.zip was not created'));
+            dd($path . '/' . now()->getTimestamp() . '.zip was not created');
         }
         QuoteRequested::dispatch($quote);
 

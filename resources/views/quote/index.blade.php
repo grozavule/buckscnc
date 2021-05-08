@@ -21,7 +21,7 @@
 @endsection
 
 @section('body-content')
-    <div class="alert alert-danger hidden form-alert">
+    <div class="alert alert-danger hidden form-alert" role="alert">
         Oops! There were some issues with the information you provided. Please check the feedback below.
     </div>
     <form id="request" method="post" action="{{ route('quote.store') }}" enctype="multipart/form-data">
@@ -73,7 +73,7 @@
         </fieldset>
         <fieldset class="files">
             <legend>FILES</legend>
-            <div class="alert alert-danger invalid-feedback"></div>
+            <div class="alert alert-danger invalid-feedback" role="alert"></div>
             <p class="text-left">Acceptable file types include *.3dm, *.asm, *.cam360, *.CATPart, *.CATProduct,
                 *.dwg, *.dxf, *.f3d, *.fbx, *.g, .iam, *.ige, *.iges, *.igs, *.ipt, *.neu,
                 *.obj, *.prt, *.sab, *.sat, *.skp, *.sldasm, *.sldprt, *.smb, *.smt, *.ste,
