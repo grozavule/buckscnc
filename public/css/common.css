@@ -34,7 +34,7 @@ legend { font-family:var(--title-font);font-size:var(--subtitle-font-size);width
 .form-control { width:100%;background:none;border:2px solid var(--tertiary-color);border-radius:var(--border-radius);padding:var(--content-padding);font-size:var(--subtitle-font-size);margin-bottom:var(--content-padding);color:var(--tertiary-color); }
 .form-control.is-invalid { margin-bottom:0; }
 .invalid-feedback { margin-bottom:var(--content-padding); }
-.form-control[type=date] { padding:0 var(--content-padding); }
+.form-control[type=date] { line-height:inherit; }
 .hidden { display:none; }
 
 .hero { background:var(--dark-blue);width:100%;min-height:100vh;display:grid;grid-template-rows:160px auto; }
