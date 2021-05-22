@@ -31,5 +31,7 @@ Route::post('/request-quote', [QuoteRequestController::class, 'store'])->name('q
 Route::post('/send-message', [EmailController::class, 'send'])->name('email.send');
 
 Route::middleware('auth')->group(function(){
-    Route::get('/request/download', [QuoteRequestController::class, 'download'])->name('quote.download');
+    Route::get('/request/download/{quote}', [QuoteRequestController::class, 'download'])->name('quote.download');
 });
+
+require __DIR__ . '/auth.php';

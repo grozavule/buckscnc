@@ -17,9 +17,9 @@ class QuoteRequestController extends Controller
         return view('quote.index', ['pageIdentifier' => 'quote']);
     }
 
-    public function download(Request $request)
+    public function download(Quote $quote)
     {
-        return 'Download files here';
+        return Storage::download($quote->zip_uri);
     }
 
     public function store(Request $request)
@@ -76,7 +76,7 @@ class QuoteRequestController extends Controller
         $isOpen = $zip->open($zipFile, ZipArchive::CHECKCONS | ZipArchive::CREATE);
         if($isOpen === true)
         {
-            $quote->zip_uri = $zipFile;
+            $quote->zip_uri = 'public/' . $companyName . '/' . $quote->id . '/' . now()->getTimestamp() . '.zip';
             $quote->save();
 
             foreach ($files as $file) {

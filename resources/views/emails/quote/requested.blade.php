@@ -42,6 +42,6 @@
 </tr>
 </table>
 
-@component('mail::button', ['url' => route('quote.download', ['id' => $quote->id])])
+@component('mail::button', ['url' => route('quote.download', ['quote' => $quote->id])])
 Download Project Files
 @endcomponent
