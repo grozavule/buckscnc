@@ -24,36 +24,36 @@
         <div class="polaroid" id="polaroid-02"></div>
         <div class="polaroid" id="polaroid-03"></div>
         <div class="polaroid" id="polaroid-04"></div>
-        <div class="polaroid" id="polaroid-05"></div>
-        <div class="polaroid" id="polaroid-06"></div>
-        <div class="polaroid" id="polaroid-07"></div>
-        <div class="polaroid" id="polaroid-08"></div>
-        <div class="polaroid" id="polaroid-09"></div>
-        <div class="polaroid" id="polaroid-10"></div>
-        <div class="polaroid" id="polaroid-12"></div>
-        <div class="polaroid" id="polaroid-13"></div>
-        <div class="polaroid" id="polaroid-14"></div>
-        <div class="polaroid" id="polaroid-15"></div>
-        <div class="polaroid" id="polaroid-16"></div>
-        <div class="polaroid" id="polaroid-17"></div>
-        <div class="polaroid" id="polaroid-18"></div>
-        <div class="polaroid" id="polaroid-19"></div>
-        <div class="polaroid" id="polaroid-20"></div>
-        <div class="polaroid" id="polaroid-21"></div>
-        <div class="polaroid" id="polaroid-22"></div>
-        <div class="polaroid" id="polaroid-23"></div>
-        <div class="polaroid" id="polaroid-24"></div>
-        <div class="polaroid" id="polaroid-25"></div>
-        <div class="polaroid" id="polaroid-26"></div>
-        <div class="polaroid" id="polaroid-27"></div>
-        <div class="polaroid" id="polaroid-28"></div>
-        <div class="polaroid" id="polaroid-29"></div>
-        <div class="polaroid" id="polaroid-30"></div>
-        <div class="polaroid" id="polaroid-31"></div>
-        <div class="polaroid" id="polaroid-32"></div>
-        <div class="polaroid" id="polaroid-33"></div>
-        <div class="polaroid" id="polaroid-34"></div>
-        <div class="polaroid" id="polaroid-35"></div>
+        {{-- <div class="polaroid" id="polaroid-05"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-06"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-07"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-08"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-09"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-10"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-12"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-13"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-14"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-15"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-16"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-17"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-18"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-19"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-20"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-21"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-22"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-23"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-24"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-25"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-26"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-27"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-28"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-29"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-30"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-31"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-32"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-33"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-34"></div> --}}
+        {{-- <div class="polaroid" id="polaroid-35"></div> --}}
     </div>
     <div class="modal-bg">
         <div class="icon modal-close">

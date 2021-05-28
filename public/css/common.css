@@ -98,11 +98,11 @@ nav { width:100%;background:var(--primary-color);display:flex;position:relative;
 .portfolio-grid { display:flex;justify-content:space-between;align-items:center;align-content:space-between;flex-wrap:wrap; }
 .portfolio-grid .polaroid { background-size:cover;background-position:center;width:450px;height:450px;border:10px solid #ffffff;margin-bottom:var(--content-padding); }
 .portfolio-grid .polaroid:hover { border:10px solid var(--primary-color);cursor:pointer; }
-#polaroid-01 { background-image:url('../assets/images/portfolio-img-01.jpg'); }
-#polaroid-02 { background-image:url('../assets/images/portfolio-img-02.jpg'); }
-#polaroid-03 { background-image:url('../assets/images/portfolio-img-03.jpg'); }
-#polaroid-04 { background-image:url('../assets/images/portfolio-img-04.jpg'); }
-#polaroid-05 { background-image:url('../assets/images/portfolio-img-05.jpg'); }
+#polaroid-01 { background-image:url('../assets/images/portfolio-tn-01.jpg'); }
+#polaroid-02 { background-image:url('../assets/images/portfolio-tn-02.jpg'); }
+#polaroid-03 { background-image:url('../assets/images/portfolio-tn-03.jpg'); }
+#polaroid-04 { background-image:url('../assets/images/portfolio-tn-04.jpg'); }
+/*#polaroid-05 { background-image:url('../assets/images/portfolio-img-05.jpg'); }
 #polaroid-06 { background-image:url('../assets/images/portfolio-img-06.jpg'); }
 #polaroid-07 { background-image:url('../assets/images/portfolio-img-07.jpg'); }
 #polaroid-08 { background-image:url('../assets/images/portfolio-img-08.jpg'); }
@@ -132,7 +132,7 @@ nav { width:100%;background:var(--primary-color);display:flex;position:relative;
 #polaroid-32 { background-image:url('../assets/images/portfolio-img-32.jpg'); }
 #polaroid-33 { background-image:url('../assets/images/portfolio-img-33.jpg'); }
 #polaroid-34 { background-image:url('../assets/images/portfolio-img-34.jpg'); }
-#polaroid-35 { background-image:url('../assets/images/portfolio-img-35.jpg'); }
+#polaroid-35 { background-image:url('../assets/images/portfolio-img-35.jpg'); }*/
 .modal-bg { display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,.5);z-index:6; }
 .modal-bg .icon:hover { color:var(--primary-color);cursor:pointer; }
 .modal-bg .modal-close { position:absolute;top:var(--content-padding);right:var(--content-padding);font-size:var(--title-font-size);color:#ffffff; }
@@ -282,20 +282,26 @@ form.box { outline:none !important;padding:0; }
 
     .hero { display:block;height:auto; }
     .hero-content { flex-direction:column; }
+    .body-content .body-wrapper { width:100%; }
 
     .hero.quote .hero-cta, .hero.portfolio .hero-cta { max-width:85%; }
     .portfolio .hero-cta .hero-main-line, .quote .hero-cta .hero-main-line { font-size:45px; }
     .portfolio .hero-cta .hero-secondary-line { font-size:15px; }
     .portfolio-grid .polaroid { width:100%; }
 
-    .quote .hero-cta .hero-secondary-line { font-size:20px;margin-bottom:var(--content-padding); }
+    .quote .hero-cta .hero-secondary-line { font-size:16px;margin-bottom:var(--content-padding); }
 }
 
-@media (max-width:400px){
+@media (max-width:425px){
     :root {
         --content-padding:15px;
     }
+    legend { line-height:13px;margin:0;text-align:center; }
     nav { padding:var(--content-padding); }
     .nav-menu { font-size:35px; }
     .hero.hp { background-image:linear-gradient(0deg, rgba(4,15,38,.8) 50%, rgba(0,168,203,.8) 100%), url('../assets/images/hp-hero-bg-360w.jpg'); }
+    .body-content { padding:var(--content-padding); }
+    .footer a.social-icon { font-size:50px; }
+
+    .box { padding:var(--content-padding); }
 }
