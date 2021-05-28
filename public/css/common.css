@@ -18,7 +18,7 @@
     --border-radius:50px;
     --content-padding:30px;
 }
-body { width:100%;font-family:var(--body-font);font-size:var(--body-font-size);overflow-x:hidden; }
+body { font-family:var(--body-font);font-size:var(--body-font-size);margin:0;padding:0; }
 a { text-decoration:none; }
 h1 { font-size:var(--title-font-size);font-family:var(--title-font); }
 h2 { font-size:var(--subtitle-font-size);font-family:var(--title-font); }
@@ -38,6 +38,7 @@ legend { font-family:var(--title-font);font-size:var(--subtitle-font-size);width
 .form-control[type=date] { line-height:inherit; }
 .hidden { display:none; }
 
+.body { width:100%;position:relative;margin:0;padding:0;overflow-x:hidden; }
 .hero { background:var(--dark-blue);width:100%;min-height:100vh;display:grid;grid-template-rows:160px auto; }
 .hero-content .hero-cta { color:#ffffff; }
 .hero-cta .hero-main-line, .hero-cta .hero-secondary-line { color:var(--secondary-color);font-family:var(--title-font);display:flex;justify-content:space-between; }
