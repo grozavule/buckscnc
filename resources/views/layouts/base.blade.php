@@ -17,6 +17,7 @@
                     <div class="nav-logo">
                         <a href="{{ route('home') }}">
                             <picture>
+                                <source media="(max-width:650px)" srcset="{{ asset('assets/images/bucks-cnc-logo-99w.gif') }}">
                                 <source media="(max-width:1000px)" srcset="{{ asset('assets/images/bucks-cnc-logo-138w.gif') }}">
                                 <img src="assets/images/bucks-cnc-logo.gif" alt="Buck's CNC Machining Logo" />
                             </picture>

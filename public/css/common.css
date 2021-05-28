@@ -290,3 +290,12 @@ form.box { outline:none !important;padding:0; }
 
     .quote .hero-cta .hero-secondary-line { font-size:20px;margin-bottom:var(--content-padding); }
 }
+
+@media (max-width:400px){
+    :root {
+        --content-padding:15px;
+    }
+    nav { padding:var(--content-padding); }
+    .nav-menu { font-size:35px; }
+    .hero.hp { background-image:linear-gradient(0deg, rgba(4,15,38,.8) 50%, rgba(0,168,203,.8) 100%), url('../assets/images/hp-hero-bg-360w.jpg'); }
+}
