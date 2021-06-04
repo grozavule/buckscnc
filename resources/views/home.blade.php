@@ -38,8 +38,9 @@
             Purus gravida quis blandit turpis cursus in. Morbi tincidunt ornare massa eget egestas purus viverra. Ornare arcu odio ut
             sem nulla pharetra diam. Ac orci phasellus egestas tellus rutrum. Dignissim cras tincidunt lobortis feugiat vivamus.</p>
             <picture>
-                <source media="(max-width:565px)" srcset="{{ asset('assets/images/large-quantity-production-img-250w.png') }}">
-                <source media="(max-width:1650px)" srcset="{{ asset('assets/images/large-quantity-production-img-425w.png') }}">
+                <source media="(max-width:425px)" srcset="{{ asset('assets/images/large-quantity-production-img-116w.png') }}">
+                <source media="(max-width:1000px)" srcset="{{ asset('assets/images/large-quantity-production-img-194w.png') }}">
+                <source media="(max-width:1465px)" srcset="{{ asset('assets/images/large-quantity-production-img-300w.png') }}">
                 <img class="horizontal-center" src="{{ asset('assets/images/large-quantity-production-img.png') }}" alt="Contract manufacturing for expanding the bandwidth of your factory" />
             </picture>
         </div>
@@ -52,8 +53,9 @@
             Purus gravida quis blandit turpis cursus in. Morbi tincidunt ornare massa eget egestas purus viverra. Ornare arcu odio ut
             sem nulla pharetra diam. Ac orci phasellus egestas tellus rutrum. Dignissim cras tincidunt lobortis feugiat vivamus.</p>
             <picture>
-                <source media="(max-width:565px" srcset="{{ asset('assets/images/custom-prototype-img-250w.png') }}">
-                <source media="(max-width:1650px)" srcset="{{ asset('assets/images/custom-prototype-img-310w.png') }}">
+                <source media="(max-width:425px" srcset="{{ asset('assets/images/custom-prototype-img-146w.png') }}">
+                <source media="(max-width:1000px" srcset="{{ asset('assets/images/custom-prototype-img-244w.png') }}">
+                <source media="(max-width:1465px)" srcset="{{ asset('assets/images/custom-prototype-img-300w.png') }}">
                 <img class="horizontal-center" src="{{ asset('assets/images/custom-prototype-img.png') }}" alt="Custom prototypes made to your specifications" />
             </picture>
         </div>

@@ -44,6 +44,8 @@
                     @yield('body-content')
                 </div>
             </div>
+            @section('content-sections')
+            @show
             <div class="footer">
                 <div class="content-columns">
                     <div class="social-media">

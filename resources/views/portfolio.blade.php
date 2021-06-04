@@ -24,37 +24,42 @@
         <div class="polaroid" id="polaroid-02"></div>
         <div class="polaroid" id="polaroid-03"></div>
         <div class="polaroid" id="polaroid-04"></div>
-        {{-- <div class="polaroid" id="polaroid-05"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-06"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-07"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-08"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-09"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-10"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-12"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-13"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-14"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-15"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-16"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-17"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-18"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-19"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-20"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-21"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-22"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-23"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-24"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-25"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-26"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-27"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-28"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-29"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-30"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-31"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-32"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-33"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-34"></div> --}}
-        {{-- <div class="polaroid" id="polaroid-35"></div> --}}
     </div>
+@endsection
+
+@section('content-sections')
+    <div class="testimonial-container tpl grey">
+        <div class="testimonial">
+            <strong>Buck's CNC has been our go-to machine shop for over 6 years.</strong> Our company designs and builds high-end sensor and
+            communication equipment for the Defense Industry. These parts require tight tolerance, and complicated geometries.
+            Buck's CNC has always been up to the task and has never let us down. We continue to return to Buck's CNC for the
+            <strong>top-notch quality</strong>, <strong>response time</strong> and <strong>customer service</strong>. <strong>We highly recommend using Buck's CNC for any of your
+            machining needs.</strong>
+            <p class="testimonial-author">Shaun Ferguson &mdash; Torrey Pines Logic</p>
+        </div>
+    </div>
+
+    <div class="testimonial-container tko black">
+        <div class="testimonial">
+            We have had numerous occasions to hire Buck's CNC for various parts we have needed for our products.  We have found Drew to be honest,
+            intelligent, and talented.  His precision to detail is great and his prices are fair. One of the biggest things that we appreciated is
+            that when he said he would have a job done, he did. In the machining world, that is something that does not always happen.  If you need
+            any machining work done or need numerous parts manufactured, I would strongly recommend his shop.
+            <p class="testimonial-author">Tim Magagna &mdash; TKO Clamping Systems</p>
+        </div>
+    </div>
+
+    <div class="testimonial-container razorback grey">
+        <div class="testimonial">
+            Working with Buck's CNC has been an incredible experience for our company. <strong>They are extremely professional and have always delivered
+            our products when they said they would.</strong>  We've used them exclusively for over 6 years now. <strong>Our parts always come with the tolerances
+            we spec'd.</strong> In addition to exceptional quality and professionalism, they are always looking for ways to help us save cost in parts design,
+            whether it's with material selection or the physical part itself. They are always willing to help and it's rare, in our experience,
+            to find a company that you can rely on 100 percent of the time. They make our business their business.
+            <p class="testimonial-author">Jorden Campbell &mdash; Razorback Technologies</p>
+        </div>
+    </div>
+
     <div class="modal-bg">
         <div class="icon modal-close">
             <i class="fas fa-window-close"></i>
