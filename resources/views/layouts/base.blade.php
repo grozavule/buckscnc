@@ -27,7 +27,7 @@
                         <i class="fa fa-times"></i>
                         <ul>
                             <li><a href="{{ route('portfolio') }}">PORTFOLIO</a></li>
-                            <li><a href="{{ route('machines') }}">MEET THE MACHINES</a></li>
+                            <!-- <li><a href="{{ route('machines') }}">MEET THE MACHINES</a></li> -->
                             <li><a href="{{ route('quote.index') }}">CONTACT</a></li>
                         </ul>
                     </div>
